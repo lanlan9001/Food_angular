@@ -1,0 +1,47 @@
+<div class="today">
+    <div class="todayTopNav">
+        <h3 ng-bind="title"></h3>
+    </div>
+    <div class="todayItems">
+        <span id="tips"></span>
+        <div class="item" ng-repeat="(key,food) in items">
+            <div class="short-item">
+                <div class="left">
+                    <img ng-src="{{food.foodImage}}" alt="">
+                </div>
+                <div class="right">
+                    <h3 ng-bind="food.foodName"></h3>
+                    <span ng-click="storeClick(key,food.store)" class="icon-star-empty" ng-class="{hide:food.store==1}"></span>
+                    <span ng-click="storeClick(key,food.store)" class="icon-star-full" ng-class="{hide:food.store==0}"></span>
+                    <!--<a class="icon-share "  href="open.weixin.qq.com"  ></a>-->
+                    <div class="function-short"><span>功效：</span><span ng-bind="food.function"></span></div>
+                    <div class="prohibit-short"><span>禁忌：</span><span ng-bind="food.prohibit"></span></div>
+                    <!--<div class="material-short" ><span>食材：</span><span ng-bind="food.material"></span></div>-->
+                    <span class="openBtn " ng-click="showClick(key,0)"
+                          ng-class="{hide:close==0&&showIndex==key,show:close==1&&showIndex==key} ">展开菜谱</span>
+                    <span class="closeBtn " ng-click="showClick(key,1)"
+                          ng-class="{hide:close==1&&showIndex==key,showClose:close==0&&showIndex==key} ">合起菜谱</span>
+                </div>
+            </div>
+
+            <div class="long-item" ng-class="{show:showIndex==key&&close==0,hide:close==1&&showIndex==key}">
+
+                <!--<h3 ng-bind="food.foodName"></h3>-->
+                <!--<div class="pic">-->
+                <!--<img ng-src="{{food.foodImage}}" alt="">-->
+                <!--</div>-->
+                <div class="material-long"><span class="title">食材：</span>
+                    <div class="infoDetail" ng-bind="food.material"></div>
+                </div>
+                <div class="cook-long"><span class="title">做法：</span>
+                    <div class="infoDetail">
+                    <div  ng-repeat="cook in food.cook">
+                        <span class="cook" ng-bind="cook"></span>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

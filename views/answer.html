@@ -1,0 +1,54 @@
+<div class="answer clearfix">
+    <h3>今日推荐都不能满足你？</h3>
+    <h2>抽签决定,如何？</h2>
+    <div class="fun">
+        <div class="first"></div>
+        <div class="second"></div>
+        <div class="third" ng-click="answerClick()">点击上菜</div>
+    </div>
+    <span class="giveAnswer" ng-bind="answerName"></span>
+    <div class="screen ">
+        <div class="itemOut">
+            <div class="itemInner">
+                <span class="begin">
+                   <span   ng-repeat="(key,foodName) in items1"><span ng-bind="foodName"></span></span>
+                </span>
+                <span class="end">
+                   <span ng-repeat="(key,foodName) in items1"><span ng-bind="foodName"></span></span>
+                </span>
+            </div>
+        </div>
+        <div class="itemOut ">
+            <div class="itemInner">
+                <span class="begin">
+                    <span ng-repeat="(key,foodName) in items2"><span ng-bind="foodName"></span></span>
+                </span>
+                <span class="end">
+                    <span ng-repeat="(key,foodName) in items2"><span ng-bind="foodName"></span></span>
+                </span>
+            </div>
+        </div>
+        <div class="itemOut ">
+            <div class="itemInner">
+                <span class="begin">
+                   <span ng-repeat="(key,foodName) in items3"><span ng-bind="foodName"></span></span>
+                </span>
+                <span class="end">
+                    <span ng-repeat="(key,foodName) in items3"><span ng-bind="foodName"></span></span>
+                </span>
+            </div>
+        </div>
+
+        <div class="itemOut ">
+            <div class="itemInner">
+                <span class="begin">
+                <span ng-repeat="(key,foodName) in items4"><span ng-bind="foodName"></span></span>
+                </span>
+                <span class="end">
+                    <span ng-repeat="(key,foodName) in items4"><span ng-bind="foodName"></span></span>
+                 </span>
+            </div>
+        </div>
+
+    </div>
+</div>

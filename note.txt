@@ -1,0 +1,5 @@
+
+   1.//transform与display之间问题:transform对display不适用。
+   // nav.style.transform = 'translate(0)';
+            // nav.style.transitionDuration = '1s';
+            // navBtn.animate({display:'none'},2000);

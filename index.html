@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Food">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>养生食</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="public/css/index.css">
+</head>
+<body>
+
+<div id="navs" >
+
+    <div class="nav" id="nav" >
+        <div class="personal">
+        <img src="public/images/avatar.png" alt=""><a href="#">登录</a>
+        </div>
+        <ul>
+            <li ng-class="{active: index == 0}" ng-click="navclick()"><a href="#/today">今日推荐</a></li>
+            <li ng-class="{active: index == 1}" ng-click="navclick()"><a href="#/foodList">营养菜单</a></li>
+            <li ng-class="{active: index == 2}" ng-click="navclick()"><a href="#/answer">想吃啥？</a></li>
+        </ul>
+    </div>
+    <div id="navBtn" ng-click="navclick()">
+    <span>更</span>
+    <span>多</span>
+    </div>
+
+</div>
+<div class="views clearfix" ng-click="navHide()">
+
+    <div ng-view ></div>
+
+</div>
+<div class="footer clearfix">©️power by llan</div>
+<script src="public/js/angular.min.js"></script>
+
+<script src="public/js/angular-route.js"></script>
+<script src="scripts/food.js"></script>
+<script src="scripts/controllers.js"></script>
+<script src="scripts/directives.js"></script>
+<script src="scripts/tools.js"></script>
+</body>
+</html>
