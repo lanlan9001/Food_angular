@@ -11,6 +11,7 @@
 
 <div id="navs" >
 
+    <!--左导航开始-->
     <div class="nav" id="nav" >
         <div class="personal">
         <img src="public/images/avatar.png" alt=""><a href="#">登录</a>
@@ -21,20 +22,25 @@
             <li ng-class="{active: index == 2}" ng-click="navclick()"><a href="#/answer">想吃啥？</a></li>
         </ul>
     </div>
-    <div id="navBtn" ng-click="navclick()">
-    <span>更</span>
-    <span>多</span>
+    <!--导航按钮-->
+    <div id="navBtn" ng-click="navclick()"><span>更</span><span>多</span>
     </div>
+    <!--左导航结束-->
 
+    <!--angular页面主体开始-->
 </div>
 <div class="views clearfix" ng-click="navHide()">
 
     <div ng-view ></div>
 
 </div>
-<div class="footer clearfix">©️power by llan</div>
-<script src="public/js/angular.min.js"></script>
+<!--angular页面主体结束-->
 
+<!--页脚开始-->
+<div class="footer clearfix">©️power by llan</div>
+<!--页脚结束-->
+
+<script src="public/js/angular.min.js"></script>
 <script src="public/js/angular-route.js"></script>
 <script src="scripts/food.js"></script>
 <script src="scripts/controllers.js"></script>
