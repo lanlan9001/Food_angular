@@ -20,36 +20,34 @@ Food.run(['$rootScope', '$http', function ($rootScope, $http) {
     var navShow = true;
     //导航
     $rootScope.navclick = function () {
-        var nav = document.getElementById('navs');
-        var navBtn = document.getElementById('navBtn');
-        var vleft = (113 / 16) * parseFloat(getFontSize());
-        vleft = -vleft ;
+        var nav = document.getElementById('nav');
+        var navBtn = document.getElementById('navRight');
         if (navShow) {
+            nav.style.transform = 'translate(0)';
+            nav.style.transitionDuration = '2s';
+            nav.style.transitionDelay = '0.1s';
             navBtn.style.display = 'none';
-            animate(nav,{left: 0}, function(){
-                //存在问题，用户手快30秒内点多次时就会执行多次，导致菜单不能合起来。
-                setTimeout(function(){navShow = false;},40)
-            },15);
+            navShow = false;
         }
         else {
+            nav.style.transform = 'translate(-80%)';
+            nav.style.transitionDuration = '2s';
+            nav.style.transitionDelay = '0.1s';
             navBtn.style.display = 'block';
-            animate(nav,{left: vleft}, function(){
-                navShow = true;
-            },15);
+            navShow = true;
         }
     }
 
     $rootScope.navHide = function () {
-        var nav = document.getElementById('navs');
-        var navBtn = document.getElementById('navBtn');
+        var nav = document.getElementById('nav');
+        var navBtn = document.getElementById('navRight');
         if(getStyle(nav,'left')!=='0px'){
             return;
         }
-        var vleft = (113 / 16) * parseFloat(getFontSize());
-        vleft = -vleft;
-        navShow = true;
+        nav.style.transform = 'translate(-80%)';
+        nav.style.transitionDuration = '2s';
         navBtn.style.display = 'block';
-        animate(nav,{left: vleft}, function(){},15);
+        navShow = true;
 
     }
 

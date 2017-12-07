@@ -1,37 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="Food">
-<head>
+<html lang="en" >
+<head >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>养生食</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="public/css/index.css">
 </head>
-<body>
+<body ng-app="Food" >
 
-<div id="navs" >
+<div id="navs">
 
-    <!--左导航开始-->
-    <div class="nav" id="nav" >
-        <div class="personal">
-        <img src="public/images/avatar.png" alt=""><a href="#">登录</a>
+    <!--导航开始-->
+    <div class="nav" id="nav">
+        <div id="navLeft">
+            <div class="personal">
+                <img src="public/images/avatar.png" alt=""><a href="#">登录</a>
+            </div>
+            <ul>
+                <li ng-class="{active: index == 0}" ng-click="navclick()"><a href="#/today">今日推荐</a></li>
+                <li ng-class="{active: index == 1}" ng-click="navclick()"><a href="#/foodList">营养菜单</a></li>
+                <li ng-class="{active: index == 2}" ng-click="navclick()"><a href="#/answer">想吃啥？</a></li>
+            </ul>
         </div>
-        <ul>
-            <li ng-class="{active: index == 0}" ng-click="navclick()"><a href="#/today">今日推荐</a></li>
-            <li ng-class="{active: index == 1}" ng-click="navclick()"><a href="#/foodList">营养菜单</a></li>
-            <li ng-class="{active: index == 2}" ng-click="navclick()"><a href="#/answer">想吃啥？</a></li>
-        </ul>
+        <!--导航按钮-->
+        <div id="navRight">
+            <div id="navBtn" ng-click="navclick()"><span>更</span><span>多</span>
+            </div>
+        </div>
     </div>
-    <!--导航按钮-->
-    <div id="navBtn" ng-click="navclick()"><span>更</span><span>多</span>
-    </div>
-    <!--左导航结束-->
+
+    <!--导航结束-->
 
     <!--angular页面主体开始-->
 </div>
 <div class="views clearfix" ng-click="navHide()">
 
-    <div ng-view ></div>
+    <div ng-view></div>
 
 </div>
 <!--angular页面主体结束-->

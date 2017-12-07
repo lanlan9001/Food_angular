@@ -28,8 +28,8 @@ angular.module('controllers', [])
                     $scope.items = info.data;
                     var tips = document.querySelector("#tips");
                     tips.innerHTML = "操作收藏成功";
-                    animate(tips,{"opacity":1},function(){},100)
-                    animate(tips,{"opacity":0},function(){},100)
+                    // animate(tips,{"opacity":1},function(){},100)
+                    // animate(tips,{"opacity":0},function(){},100)
                     // tips = angular.element(tips);
                     //tips.html("操作收藏成功").fadeIn(1000).fadeOut(1000);
                 }

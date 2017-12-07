@@ -46,22 +46,22 @@ li {
   *zoom: 1;
   /*IE/7/6*/
 }
-@media (width: 320px) {
+@media only screen and (width: 320px) {
   html {
     font-size: 16px;
   }
 }
-@media (width: 360px) {
+@media only screen and (width: 360px) {
   html {
     font-size: 18px;
   }
 }
-@media (width: 375px) {
+@media only screen and (width: 375px) {
   html {
     font-size: 18.75px;
   }
 }
-@media screen and (min-width: 400px) and (max-width: 411px) {
+@media only screen and (min-width: 400px) and (max-width: 411px) {
   html {
     font-size: 20px;
   }
@@ -104,69 +104,78 @@ li {
 /*导航开始*/
 #navs {
   box-sizing: border-box;
-  width: 8.75rem;
   position: absolute;
+  transition: translate  ;
   top: 0;
   bottom: 0;
-  left: -6.75rem;
   z-index: 999;
 }
 #navs #nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8.75rem;
+  transform: translate(-80%);
+}
+#navs #nav #navLeft {
   float: left;
   position: absolute;
   top: 0;
   bottom: 0;
   box-sizing: border-box;
-  width: 6.75rem;
+  width: 7rem;
   background-color: #B1876C;
   padding-top: 2.25rem;
 }
-#navs #nav .personal {
+#navs #nav #navLeft .personal {
   padding-left: 0.625rem;
   margin-bottom: 1.25rem;
   position: relative;
 }
-#navs #nav .personal img {
+#navs #nav #navLeft .personal img {
   border-radius: 0.625rem;
   width: 1.25rem;
   height: 1.25rem;
 }
-#navs #nav .personal a {
+#navs #nav #navLeft .personal a {
   position: absolute;
   top: 0.125rem;
   padding-left: 0.625rem;
   font-size: 0.875rem;
   color: #C9C9C9;
 }
-#navs #nav li {
-  width: 6.125rem;
+#navs #nav #navLeft li {
+  width: 6.375rem;
   padding-left: 0.625rem;
   margin-bottom: 0.625rem;
 }
-#navs #nav li .active {
+#navs #nav #navLeft li .active {
   background-color: #FE6501;
 }
-#navs #nav a {
+#navs #nav #navLeft a {
   font-size: 0.875rem;
   color: white;
 }
-#navs #nav .active {
+#navs #nav #navLeft .active {
   background-color: #FE6501;
 }
-#navs #navBtn {
-  float: right;
+#navs #nav #navRight {
+  float: left;
   position: absolute;
-  right: 0;
+  left: 7rem;
   top: 8.75rem;
   font-size: 0.75rem;
+  width: 1.75rem;
+}
+#navs #nav #navRight #navBtn {
   color: #AEAEAE;
   border-radius: 0 0.3125rem 0.3125rem 0;
   background-color: rgba(0, 0, 0, 0.3);
 }
-#navs #navBtn span {
+#navs #nav #navRight #navBtn span {
   display: block;
   text-align: center;
-  width: 2rem;
+  width: 1.75rem;
   height: 1.25rem;
   line-height: 1.25rem;
 }
@@ -174,6 +183,7 @@ li {
 /*主体开始*/
 .views {
   margin: 0 auto 0.625rem;
+  transition: opacity;
   /*今日推荐页面开始*/
   /*今日推荐页面结束*/
   /*想吃啥？页面开始*/
